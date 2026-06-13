@@ -16,11 +16,14 @@ const config: Config = {
         },
         pearl: "#fffaf7",
         linen: "#f6ebe3",
-        cocoa: "#6b4f46"
+        champagne: "#f4dfd2",
+        cocoa: "#6b4f46",
+        ink: "#2c211d"
       },
       boxShadow: {
-        soft: "0 24px 80px rgba(163, 92, 103, 0.16)",
-        card: "0 16px 48px rgba(132, 86, 86, 0.11)"
+        soft: "0 28px 90px rgba(138, 77, 88, 0.18)",
+        card: "0 18px 54px rgba(111, 74, 68, 0.12)",
+        premium: "0 28px 80px rgba(87, 56, 51, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.72)"
       },
       fontFamily: {
         sans: ["-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Inter", "Arial", "sans-serif"]

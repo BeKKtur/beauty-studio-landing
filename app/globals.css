@@ -18,8 +18,10 @@ html {
 body {
   min-height: 100vh;
   background:
-    radial-gradient(circle at top left, rgba(255, 214, 220, 0.55), transparent 34rem),
-    linear-gradient(180deg, #fffaf7 0%, #fff7f8 45%, #ffffff 100%);
+    radial-gradient(circle at 12% 4%, rgba(255, 214, 220, 0.7), transparent 28rem),
+    radial-gradient(circle at 88% 14%, rgba(244, 223, 210, 0.82), transparent 30rem),
+    linear-gradient(135deg, #fffaf7 0%, #fff2f4 36%, #fffdfb 72%, #ffffff 100%);
+  color: #2c211d;
 }
 
 img {
@@ -29,4 +31,75 @@ img {
 ::selection {
   background: #ffd6dc;
   color: #6b2837;
+}
+
+.reveal-section {
+  animation: fade-up both;
+  animation-timeline: view();
+  animation-range: entry 8% cover 28%;
+}
+
+.whatsapp-pulse {
+  animation: soft-pulse 3.2s ease-in-out infinite;
+}
+
+.premium-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-button::after {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.42), transparent);
+  content: "";
+  height: 100%;
+  left: -80%;
+  position: absolute;
+  top: 0;
+  transform: skewX(-18deg);
+  transition: left 0.7s ease;
+  width: 48%;
+}
+
+.premium-button:hover::after {
+  left: 130%;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(34px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes soft-pulse {
+  0%,
+  100% {
+    box-shadow: 0 18px 46px rgba(238, 95, 123, 0.24);
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    box-shadow: 0 24px 64px rgba(238, 95, 123, 0.34);
+    transform: translateY(-1px) scale(1.015);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal-section,
+  .whatsapp-pulse {
+    animation: none;
+  }
+
+  .premium-button::after {
+    display: none;
+  }
 }
